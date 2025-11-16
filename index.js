@@ -4,6 +4,7 @@ import { LinkupClient } from "linkup-sdk";
 import axios from "axios";
 import dotenv from "dotenv";
 
+
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -19,7 +20,9 @@ app.use(paymentMiddleware(
     "POST /combined": { price: "$0.05", network: "base-sepolia" }
   }
 ));
-
+app.get("/", (req, res) => {
+  res.send("AI API is live. Use /search, /scrape, /generate, or /combined");
+});
 // 1. Linkup: Real-time search
 app.get("/search", async (req, res) => {
   try {
