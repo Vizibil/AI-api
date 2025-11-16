@@ -14,10 +14,10 @@ const linkup = new LinkupClient({ apiKey: process.env.LINKUP_API_KEY });
 app.use(paymentMiddleware(
   process.env.WALLET_ADDRESS,
   {
-    "GET /search": { price: "$0.01", network: "base-sepolia" },
-    "GET /scrape": { price: "$0.02", network: "base-sepolia" },
-    "POST /generate": { price: "$0.03", network: "base-sepolia" },
-    "POST /combined": { price: "$0.05", network: "base-sepolia" }
+    "GET /search": { price: "$0.01", network: "base" },
+    "GET /scrape": { price: "$0.02", network: "base" },
+    "POST /generate": { price: "$0.03", network: "base" },
+    "POST /combined": { price: "$0.05", network: "base" }
   }
 ));
 app.get("/", (req, res) => {
